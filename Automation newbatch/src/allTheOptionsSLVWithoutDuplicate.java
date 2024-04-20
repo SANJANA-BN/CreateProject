@@ -1,0 +1,46 @@
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashSet;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+public class allTheOptionsSLVWithoutDuplicate {
+
+	public static void main(String[] args) throws InterruptedException{
+		WebDriver driver=new ChromeDriver();
+		driver.get("file:///C:/Users/DELL/Desktop/multiselect.html");
+		WebElement slvlistbox=driver.findElement(By.id("slv"));
+		Thread.sleep(2000);
+		Select s=new Select(slvlistbox);
+		List<WebElement>alloptions=s.getOptions();
+		int count=alloptions.size();
+		for(int i=0;i<count;i++) {
+			String text=alloptions.get(i).getText();
+			System.out.println(text);
+	}
+HashSet hs=new HashSet<>();
+hs.add("idly");
+hs.add("dosa");
+hs.add("vada");
+hs.add("chapati");
+hs.add("poori");
+hs.add("kharabath");
+hs.add("chowchowbath");
+hs.add("paddu");
+hs.add("idly");
+for(Object o:hs)
+{
+	System.out.println(hs);
+}
+
+
+
+
+	
+}
+}
